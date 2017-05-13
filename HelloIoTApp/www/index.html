@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GarbageBin</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+
+
+        <!--  MQTT-->
+         <script src="js/iot-nodejs/dist/iotf-client-bundle.js"></script>
+        
+
+        <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   		<script src="js/index.js"></script>
+		
+        <!-- require.js -->
+        
+        <script src="js/require.js"></script>
+   		
+        <script type="text/javascript"> 
+        	$(document).ready(function(){
+
+        		require.config({
+
+	              baseUrl : './js' ,
+
+	                paths: {
+
+	                    requirejs: 'require',
+	                    ibmiotf : 'iot-nodejs/dist/iotf-client-bundle.min'
+
+	                }
+
+	            });
+
+        		
+
+        		require(['ibmiotf'], function(iotf){
+        			app.initialize();
+	
+        		})
+
+        		
+        			
+        	})
+        	
+        </script>
+        
+    </head>
+    <body>
+        <div data-role="page" id="mainpage" >
+            <div data-role="header" >
+                <p align="center">Garbage Level Indicator</p>
+            </div>   
+        
+            <div data-role="main" class="ui-content">
+                <div class="container" align="center">
+                    <svg id="container001" width="142" height="222" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path id="path" d="m9.332705,22.999071l8.000813,-12.998964l1.333349,199.335449l104.667782,0.666687l-0.666672,-200.66881l8.666756,12.666801" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="2.5" stroke="#000" fill="none"/>
+                            <rect id="s1" height="16" width="98" y="12.462414" x="22.100758" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+                            <rect id="s2" height="16" width="98" y="32.462627" x="22.10076" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+                            <rect id="s3" height="16" width="98" y="51.796159" x="22.100759" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+                            <rect id="s4" height="16" width="98" y="71.129698" x="22.100759" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+                            <rect id="s5" height="16" width="98" y="91.231877" x="22.100759" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+                            <rect id="s6" height="16" width="98" y="111.232096" x="22.100758" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+                            <rect id="s7" height="16" width="98" y="131.232309" x="22.100758" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+                            <rect id="s8" height="16" width="98" y="151.00044" x="22.100759" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+                            <rect id="s9" height="16" width="98" y="170.566061" x="22.100758" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+                            <rect id="s10" height="16" width="98" y="189.8996" x="22.100758" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+                            <p id="s11" style="color:red" hidden="true">WARNING : The Lid Is Open</p>
+                            
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

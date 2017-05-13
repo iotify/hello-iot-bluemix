@@ -31,11 +31,11 @@ Edit the variables in the following lines as follows
           receivernumber      29                 Twilio verified number (where you want to receive the SMS notifications). 
                                                  Should have country code, for example +18458892405
 
-          organization        144                IBM account organization ID
+          organization        146                IBM account organization ID
 
-          authKey             151                Generated API key
+          authKey             153                Generated API key
 
-          authToken	          152                Generated Authentication token
+          authToken	          154                Generated Authentication token
 
 # [Mobile App Configuration](#mobile-app-configuration)
 The IBM IoT platform configuration has to be done in the mobile app as well, since the mobile app is also registered as a device instance for receiving the readings published by the Raspberry Pi.
@@ -49,34 +49,3 @@ Edit the line numbers in [index.js](https://github.com/iotify/hello-iot-bluemix/
           auth-key             60                  Generated API key	
 
           auth-token           61                  Generated authentication token  
-
-
-# [Steps to Build the Mobile App](#steps-to-build-the-mobile-app)
-
-For building the mobile app, please refer to the official Cordova & Android documentation to setup the build dependencies. You will have to setup a build system with the dependencies, primarily the NodeJS, Java and Ant among others. 
-
-Follow the steps below to build the APK file for the mobile app. All these steps are to be performed on the build system. These steps have been verified on a build system with Ubuntu mate OS along with Android version 23 & Cordova 6.3.0
-
-Step 1: Clone this repository and run the following commands from within the repository to pull the submodules from https://github.com/ibm-watson-iot/iot-nodejs to get the nodejs sdk for the IBM IoT platform.
-
-	git submodule init
-	git submodule update
-
-Step 2: Add the android platform by executing this command in the terminal under the app root folder (HelloIoTApp)
-
-		cordova platform add android
-		
-Step 3:	In the config.xml file in the root folder change the name of the app to the name you want. This is optional step. By default the app name is "Hello IoT"
-
-Step 4: Build the app by executing the following command in the terminal in the root folder of the cordova app
-          
-          cordova build android
-
-Step 5: Once build is successful, you can find the generated apk file in the following path relative to the cordova project root directory.
-	
-		/platforms/android/build/outputs/apk
-			
-
-
-
-
